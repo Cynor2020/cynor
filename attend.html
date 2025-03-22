@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance College Web Software - CYNOR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeIn: "fadeIn 1.5s ease-in-out",
+                        slideUp: "slideUp 1s ease-in-out",
+                        zoomIn: "zoomIn 1s ease-in-out",
+                        glow: "glow 1.5s infinite alternate"
+                    },
+                    keyframes: {
+                        fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } },
+                        slideUp: { "0%": { transform: "translateY(50px)", opacity: 0 }, "100%": { transform: "translateY(0)", opacity: 1 } },
+                        zoomIn: { "0%": { transform: "scale(0.8)", opacity: 0 }, "100%": { transform: "scale(1)", opacity: 1 } },
+                        glow: { "0%": { boxShadow: "0 0 10px rgba(0, 255, 255, 0.5)" }, "100%": { boxShadow: "0 0 20px rgba(0, 255, 255, 1)" } }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div class="max-w-5xl mx-auto p-8 mt-10 glass-effect animate-fadeIn">
+
+        <!-- Title Section -->
+        <h1 class="text-4xl font-bold text-cyan-400 animate-glow">Attendance College Web Software</h1>
+        <p class="text-lg text-gray-300 animate-slideUp mt-2">
+            CYNOR's Attendance College Web Software is a smart attendance management system designed for colleges and schools. This system tracks student attendance and automatically sends SMS alerts to parents when a student is absent. It simplifies the attendance process for faculty and administration, making it more efficient and hassle-free.
+
+        <!-- Features Section -->
+        <h2 class="text-2xl font-semibold text-cyan-300 mt-6 animate-slideUp">🌟 Key Features</h2>
+        <ul class="list-disc pl-6 text-gray-400 animate-fadeIn">
+            <li>🔹 Automated SMS Alerts – MSG91 API se real-time notifications</li>
+            <li>🔹 Student Attendance Tracking – Manual aur biometric integration support</li>
+            <li>🔹 Admin Dashboard – Faculty aur students ki attendance management</li>
+            <li>🔹 Reports & Analytics – Monthly aur yearly attendance insights</li>
+        </ul>
+
+        <!-- Tech Stack -->
+        <h2 class="text-2xl font-semibold text-cyan-300 mt-6 animate-slideUp">💻 Technology Stack</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            <div class="p-4 bg-gray-800 rounded-lg text-center animate-zoomIn">HTML & CSS</div>
+            <div class="p-4 bg-gray-800 rounded-lg text-center animate-zoomIn">Tailwind CSS</div>
+            <div class="p-4 bg-gray-800 rounded-lg text-center animate-zoomIn">JavaScript</div>
+            <div class="p-4 bg-gray-800 rounded-lg text-center animate-zoomIn">PHP (Laravel)</div>
+            <div class="p-4 bg-gray-800 rounded-lg text-center animate-zoomIn">MySQL</div>
+            <div class="p-4 bg-gray-800 rounded-lg text-center animate-zoomIn">Twilio & MSG91 APIs</div>
+        </div>
+
+        <!-- Screenshots Section -->
+        <h2 class="text-2xl font-semibold text-cyan-300 mt-6 animate-slideUp">🖼 Screenshots</h2>
+        <div class="grid grid-cols-2 gap-4 mt-4">
+            <img src="./img/collage1.jpeg" alt="CRM Dashboard" class="rounded-lg shadow-lg animate-fadeIn hover:scale-105 transition">
+            <img src="./img/collage2.jpeg" alt="Lead Management" class="rounded-lg shadow-lg animate-fadeIn hover:scale-105 transition">
+            <img src="./img/collage3.jpeg" alt="CRM Dashboard" class="rounded-lg shadow-lg animate-fadeIn hover:scale-105 transition">
+            <img src="./img/collage4.jpeg" alt="Lead Management" class="rounded-lg shadow-lg animate-fadeIn hover:scale-105 transition">
+        </div>
+
+        <!-- Video Embed -->
+        <h2 class="text-2xl font-semibold text-cyan-300 mt-6 animate-slideUp">🎥 Demo Video</h2>
+        <div class="mt-4 animate-fadeIn">
+            <iframe class="w-full h-64 rounded-lg shadow-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Benefits Section -->
+        <h2 class="text-2xl font-semibold text-cyan-300 mt-6 animate-slideUp">🚀 Benefits</h2>
+        <ul class="list-disc pl-6 text-gray-400 animate-fadeIn">
+            <li>🔸 Reduces Manual Work – Automates attendance tracking, saving faculty time.</li>
+            <li>🔸 Instant Parent Notification – Sends real-time SMS alerts for absent students.</li>
+            <li>🔸 Accurate & Secure Data – Stores attendance records digitally, preventing data loss.</li>
+            <li>🔸 Custom Reports & Insights – Provides analytics for better student performance tracking.</li>
+        </ul>
+
+        <!-- Client Details -->
+       
+
+    </div>
+
+</body>
+</html>

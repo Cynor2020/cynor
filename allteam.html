@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - CYNOR</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a192f;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s ease;
+            text-align: center;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: cyan;
+            box-shadow: 0 0 10px cyan, 0 0 40px cyan;
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid cyan;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .role {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: cyan;
+            font-size: 20px;
+            transition: 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: white;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .team-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<h1>OUR TEAM</h1>
+<p>We are a team of developers and AI experts at CYNOR.</p>
+
+<div class="team-container">
+    <!-- Row 1 -->
+    <div class="card">
+        <img src="./img/sarthak.png" alt="Sarthak Gadakh" class="profile-img">
+        <p class="name">Sarthak Gadakh</p>
+        <p class="role">Founder & Full Stack Developer</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/sarthak_gadakh__?igsh=MTk1ZXVjMTU1d25hMA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sarthak-gadakh-founder-cynor?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/share/1xWrFSErpx/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="./img/aditya.png" alt="Aditya Gangurde" class="profile-img">
+        <p class="name">Aditya Gangurde</p>
+        <p class="role">CEO & AI Developer</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/aditya_gangurde__?igsh=MW9wb2J0dWI4bzJ6MQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/aditya-gangurde-9a0346320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/share/1YEsPa8tkz/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="./img/sanket.png" alt="Sanket Jagzap" class="profile-img">
+        <p class="name">Sanket Jagzap</p>
+        <p class="role">Managing Director</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/sanket_jagzap?igsh=MW1wcXl2aWZxcWU3dQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sanket-jagzap-932565323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/share/15zgZ8YZVt/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./img/krushna.png" alt="Krushna Patil" class="profile-img">
+        <p class="name">Krushna Patil</p>
+        <p class="role">Data Analytics Specialist</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/krishna70589?igsh=MTQ3dTR2Ym52NG0yOA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/krushna-patil-6b0aa2281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+    <!-- Row 2 -->
+    <div class="card">
+        <img src="./img/nishu1.png" alt="Nishu Yeole" class="profile-img">
+        <p class="name">Nishu Yeole</p>
+        <p class="role">Data Analytics Specialist</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/nishuyeole03?igsh=MW0wdmI5MndxMGNqNg==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/nishikant-yeole-27a554280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/share/1KE4cF8tAh/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="./img/sushant1.png" alt="AI Specialist" class="profile-img">
+        <p class="name">Sushant Bhamare</p>
+        <p class="role">Full Stack Developer</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/sush_2107_?igsh=MXdramNnc3I1YTFqcA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sushant-bhamare-4862b833b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./img/pranav.png" alt="AI Specialist" class="profile-img">
+        <p class="name">Pranav Patil</p>
+        <p class="role">Data Analytics Specialist</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/sush_2107_?igsh=MXdramNnc3I1YTFqcA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sushant-bhamare-4862b833b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./img/pavan.png" alt="Full Stack Developer" class="profile-img">
+        <p class="name">Pawan Pimpale</p>
+        <p class="role">Data Analytics Specialist</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/pavan_fimpale_96k?utm_source=qr&igsh=MXd1cGFhNmxtd2lpcQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/pavan-fimpale-b9147a348" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/pavan.fimpale.1?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./img/chetan.png" alt="Full Stack Developer" class="profile-img">
+        <p class="name">Chetan Ghotekar</p>
+        <p class="role">Data Analytics</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/chetan_ghotekar.96k" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/chetan-ghotekar-2b856a286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/chetan.ghotekar.982" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./img/rohit.png" alt="Full Stack Developer" class="profile-img">
+        <p class="name">Rohit Wani</p>
+        <p class="role">Full Stack Developer</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/_its.rohit_18_?utm_source=qr&igsh=MWFjeDN2enFjZjY0OA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/rohit-wani-47115631b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/share/12Jo7whf3TQ/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 100 },
+            size: { value: 3 },
+            move: { speed: 2 },
+            line_linked: { enable: true, opacity: 0.5 }
+        }
+    });
+</script>
+
+</body>
+</html>

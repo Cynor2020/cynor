@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYNOR - AI & Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeIn: "fadeIn 2s ease-in-out",
+                        float: "float 4s ease-in-out infinite",
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            "0%": { opacity: "0", transform: "scale(0.9)" },
+                            "100%": { opacity: "1", transform: "scale(1)" }
+                        },
+                        float: {
+                            "0%, 100%": { transform: "translateY(0)" },
+                            "50%": { transform: "translateY(-10px)" }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+        }
+        /* Transparent & Glassmorphism Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 50, 0.3); /* Slightly transparent */
+    backdrop-filter: blur(10px); /* Glass Effect */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Navbar Links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 15px;
+    position: relative;
+    padding: 8px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: cyan;
+    box-shadow: 0 0 10px cyan;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: cyan;
+    box-shadow: 0 0 10px cyan;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background: cyan;
+    box-shadow: 0 0 10px cyan;
+    transition: height 0.3s ease-in-out;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover span {
+    height: 100%;
+}
+        
+        .tech-bg {
+            background: url('tech-animation.gif');
+            background-size: cover;
+            background-position: center;
+        }
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+        /* Full Website Background */
+body {
+    position: relative;
+    background: radial-gradient(circle, rgba(0,0,50,1) 0%, rgba(0,0,20,1) 100%);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Tech Animation Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('tech-animation.gif'); /* Add animated tech background */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Adjust brightness */
+    z-index: -1;
+}
+
+.particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Background floating images */
+        .particle {
+            position: absolute;
+            width: 80px; /* Adjust size */
+            height: 80px;
+            animation: moveParticles 6s infinite ease-in-out;
+        }
+
+        .particle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: drop-shadow(0px 0px 10px rgba(0, 255, 255, 0.5)); /* Glow effect */
+        }
+
+        /* Center Logo */
+        .center-logo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px; /* Bigger size */
+            height: 250px;
+            animation: floatLogo 4s infinite ease-in-out;
+        }
+
+        .center-logo img {
+            position: absolute; /* ya jo bhi position hai */
+    z-index: -1; /* background pe chala jayega */
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0px 0px 20px rgba(0, 255, 255, 1)); /* Stronger glow */
+        }
+
+        /* Background particles animation */
+        @keyframes moveParticles {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Center logo animation */
+        @keyframes floatLogo {
+            0% { transform: translate(-50%, -50%) translateY(0px); }
+            50% { transform: translate(-50%, -50%) translateY(-20px); }
+            100% { transform: translate(-50%, -50%) translateY(0px); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .particle {
+                width: 60px;
+                height: 60px;
+            }
+            .center-logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+
+        .contact-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .contact-container h2 {
+            color: #00ffff;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            background: #00ffff;
+            color: #000;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #008080;
+            color: #fff;
+        }
+
+        .footer {
+        background: #0a0a0a;
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .footer-about, .footer-links, .footer-social, .footer-newsletter {
+        flex: 1;
+        margin: 10px;
+    }
+    .footer-logo {
+        width: 120px;
+    }
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-links ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    .footer-social a {
+        color: #0ff;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+    .footer-newsletter input {
+        padding: 8px;
+        width: 80%;
+    }
+    .footer-newsletter button {
+        padding: 8px;
+        background: #0ff;
+        border: none;
+        cursor: pointer;
+    }
+    .footer-bottom {
+        margin-top: 20px;
+        border-top: 1px solid #333;
+        padding-top: 10px;
+    }
+    .logo {
+    
+}
+
+.text {
+    position: relative;
+    z-index: 10; /* text upar rahega */
+}
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobile Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        padding: 20px 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* 🔥 Animate Hamburger Icon */
+    .menu-toggle.active i {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease-in-out;
+    }
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.logo-img {
+    width: 55px;  /* 🔥 Adjust logo size */
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+         /* Section Container */
+         
+
+    </style>
+</head>
+<body>
+    <!-- Particle Effects (For Entire Website) -->
+<div id="home" class="absolute top-0 left-0 w-full h-full">
+    <div class="absolute top-0 left-0 w-full h-full">
+        <!-- <div class="particle" style="top: 5%; left: 30%; right: 50%; flex: justify-center;"><img src="./cynor.png" alt="Particle"></div> -->
+        <!-- <div class="particle" style="top: 20%; left: 30%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 40%; left: 50%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 60%; left: 80%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 80%; left: 20%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 95%; left: 70%;"><img src="./cynor.png" alt="Particle"></div>
+    
+        <div class="particle" style="top: 5%; left: 20%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 12%; left: 250%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 28%; left: 60%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 51%; left: 95%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 71%; left: 75%;"><img src="./cynor.png" alt="Particle"></div>
+        <div class="particle" style="top: 85%; left: 35%;"><img src="./cynor.png" alt="Particle"></div> -->
+
+
+        <div class="particles-container">
+            <div class="particle" style="top: 17%; left: 5%;"><img src="./img/data a.png" alt="Particle"></div>
+            <div class="particle" style="top: 60%; left: 70%;"><img src="./img/analits.png" alt="Particle"></div>
+            <div class="particle" style="top: 60%; left: 10%;"><img src="./img/bot.png" alt="Particle"></div>
+            <div class="particle" style="top: 17%; left: 80%;"><img src="./img/AI.png" alt="Particle"></div>
+            <div class="particle" style="top: 40%; left: 20%;"><img src="./img/coding.png" alt="Particle"></div>
+            <div class="particle" style="top: 40%; left: 60%;"><img src="./img/web.png" alt="Particle"></div>
+            <div class="particle" style="top: 75%; left: 50%;"><img src="./img/cbot.png" alt="Particle"></div>
+            <div class="particle" style="top: 80%; left: 25%;"><img src="./img/web.png" alt="Particle"></div>
+        </div>
+    
+        <!-- Center Logo -->
+        <div class="center-logo">
+            <img src="./img/cynor.png" alt="Center Logo">
+        </div>
+
+
+    </div>
+</div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="./img/cynor.png" alt="Company Logo" class="logo-img"> <!-- ✅ LOGO ADDED -->
+            <h2 class="logo-text">CYNOR</h2>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i> <!-- 3-line Hamburger Menu -->
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#team">Team</a>
+            <a href="#clients">Clients</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="flex flex-col items-center justify-center h-screen text-center tech-bg relative">
+        <h2 class="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text animate-fadeIn">
+            AI & Web Solutions for the Future
+        </h2>
+        <p class="text-gray-400 mt-4 p-7 text-lg animate-fadeIn">"Cynor offers top-notch services in Data Analytics, Full-Stack Development, and AI Chatbots. We help businesses grow with smart tech solutions, powerful web apps, and AI-driven automation. Let’s build something great together!"</p>
+        
+        <!-- Larger & More Visible Particles -->
+        
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="p-10">
+        <h2 class="text-3xl font-bold text-center mb-4 relative ">Our Services</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass p-6 rounded-lg">
+                <img src="./img/full stact.webp.jpg" alt="AI Chatbots" class="w-full rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Full Stack Development</h3>
+                <p class="text-gray-300 mt-2">Smart AI chatbots to automate business communications.</p>
+            </div>
+
+            <div class="glass p-6 rounded-lg">
+                <img src="./img/data ana.jpg" alt="AI Chatbots" class="w-full rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Data Analytics</h3>
+                <p class="text-gray-300 mt-2">Smart AI chatbots to automate business communications.</p>
+            </div>
+
+            <div class="glass p-6 rounded-lg">
+                <img src="./img/ai chatbot.jpg" alt="AI Chatbots" class="w-full rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">AI Chatbots</h3>
+                <p class="text-gray-300 mt-2">Smart AI chatbots to automate business communications.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services" class="p-10">
+        <h2 class="text-3xl font-bold text-center mb-4 relative">Why Choose Us</h2>
+        <h4 class="text-1x9 p-6 font-bold text-center relative">
+            We provide top-notch AI, Web Development, and Data Analytics services to help your business grow.
+        </h4>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass p-6 rounded-lg">
+                <img src="./img/support.jpg" alt="AI Chatbots" class="w-full rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Expert Team & 24/7 Support</h3>
+                <p class="text-gray-300 mt-2">Our experienced developers and AI specialists deliver high-quality solutions. </p>
+            </div>
+
+            <div class="glass p-6 rounded-lg">
+                <img src="./img/fasts.jpg" alt="AI Chatbots" class="w-full rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Fast & Scalable</h3>
+                <p class="text-gray-300 mt-2">We create efficient, scalable, and high-performance web & AI solutions.</p>
+            </div>
+
+            <div class="glass p-6 rounded-lg">
+                <img src="./img/price.jpg" alt="AI Chatbots" class="w-full rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Affordable Pricing</h3>
+                <p class="text-gray-300 mt-2">We offer cost-effective solutions without compromising quality.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="p-10">
+        <h2 class="text-3xl font-bold text-center mb-8 relative">Our Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">SoftForPC.in</h3>
+                <p class="text-gray-300">A leading software & games download website. 🚀</p>
+                <a href="softforpc.html" class="block mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">See Full Details</a>
+            </div>
+
+
+            <div class="glass p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">CRM System</h3>
+                <p class="text-gray-300">CRM: Manages customer interactions and boosts sales. 🚀</p>
+                <a href="crm.html" class="block mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">See Full Details</a>
+            </div>
+
+            <div class="glass p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Web coders</h3>
+                <p class="text-gray-300">we strive to empower coding learners with accessible resources. 🚀</p>
+                <a href="webcoders.html" class="block mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">See Full Details</a>
+            </div>
+
+            <div class="glass p-6 rounded-lg">
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Attendance College Web Software</h3>
+                <p class="text-gray-300">tracks student attendance & automatically sends SMS alerts to parents.</p>
+                <a href="attend.html" class="block mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">See Full Details</a>
+            </div>
+
+        </div>
+        <div class="glass p-6 rounded-lg mt-4 flex justify-center">
+        <a href="allproject.html" class="block mt-1 bg-blue-500 text-white py-2 px-4 w-80 rounded hover:bg-blue-600 flex justify-center">See All Projects</a>
+        </div>
+    </section>
+
+        <!-- Team Section -->
+        <section id="team" class="p-10">
+            <h2 class="text-3xl font-bold text-center mb-8 relative">Our Team</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="glass p-6 rounded-lg">
+                    <img src="./img/sarthak.png" alt="Sarthak Gadakh" class="team-photo mx-auto">
+                    <h3 class="text-xl font-semibold text-blue-400 mt-4">Sarthak Gadakh</h3>
+                    <p class="text-gray-300">Founder</p>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <img src="./img/aditya.png" alt="Sanket Jagzap" class="team-photo mx-auto">
+                    <h3 class="text-xl font-semibold text-blue-400 mt-4">Aditya Gangurde</h3>
+                    <p class="text-gray-300">CEO</p>
+                </div>
+                <div class="glass p-6 rounded-lg">
+                    <img src="./img/sanket.png" alt="Sanket Jagzap" class="team-photo mx-auto">
+                    <h3 class="text-xl font-semibold text-blue-400 mt-4">Sanket Jagzap</h3>
+                    <p class="text-gray-300">Managing Director</p>
+                </div>
+            </div>
+            <div class="glass p-6 rounded-lg mt-4 flex justify-center">
+                <a href="allteam.html" class="block mt-1 bg-blue-500 text-white py-2 px-4 w-80 rounded hover:bg-blue-600 flex justify-center">More Team Member</a>
+            </div>
+        </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="p-10">
+        <h2 class="text-3xl font-bold text-center mb-8 relative">Our Clients</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass p-6 rounded-lg">
+                <!-- <img src="client-logo.jpg" alt="Client Name" class="w-full rounded-lg"> -->
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Shree Shinde</h3>
+                <p class="text-gray-300">Hostel Management Software with CYNOR.</p>
+            </div>
+
+            <div class="glass p-6 rounded-lg">
+                <!-- <img src="client-logo.jpg" alt="Client Name" class="w-full rounded-lg"> -->
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Cake Shop, Nashik</h3>
+                <p class="text-gray-300">CRM System with CYNOR.</p>
+            </div>
+
+            <div class="glass p-6 rounded-lg">
+                <!-- <img src="client-logo.jpg" alt="Client Name" class="w-full rounded-lg"> -->
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">Sagar Wani</h3>
+                <p class="text-gray-300">Mobile Shop Responsive Website with CYNOR.</p>
+            </div>
+            <div class="glass p-6 rounded-lg">
+                <!-- <img src="client-logo.jpg" alt="Client Name" class="w-full rounded-lg"> -->
+                <h3 class="text-xl font-semibold text-blue-400 mt-4">NIT Polytechnic</h3>
+                <p class="text-gray-300">Online Collage Admission System with CYNOR.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="contact" class="p-10 ">
+        <h2 class="text-3xl font-bold text-center mb-8 relative">Contact Us</h2>
+        
+        <div class="glass p-6 rounded-lg mt-4 flex justify-center">
+            <form action="send_mail.php" method="POST">
+                <input type="text" placeholder="Your Name" 
+    class="w-full p-3 bg-transparent text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">
+
+<input type="email" placeholder="Your Email" 
+    class="w-full p-3 bg-transparent text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">
+
+<textarea placeholder="Your Message" 
+    class="w-full p-3 bg-transparent text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-10 ">
+        <div class="container mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brand Info -->
+                <div>
+                    <h2 class="text-xl font-bold text-white relative">CYNOR</h2>
+                    <p class="mt-2 text-sm relative">
+                        Leading web development and AI solutions provider.
+                    </p>
+                </div>
+    
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white relative">Quick Links</h3>
+                    <ul class="mt-2 space-y-2">
+                        <li><a href="#" class="hover:text-white relative">Home</a></li>
+                        <li><a href="#" class="hover:text-white relative">Services</a></li>
+                        <li><a href="#" class="hover:text-white relative">Projects</a></li>
+                        <li><a href="#" class="hover:text-white relative">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white relative">Stay Connected</h3>
+                    <div class="flex space-x-4 mt-3">
+                        <a href="#" class="text-xl hover:text-white relative"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-xl hover:text-white relative"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-xl hover:text-white relative"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-xl hover:text-white relative"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Bottom Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-4 text-center">
+                <p class="text-sm relative">&copy; 2025 CYNOR. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</body>
+</html>
+<script src="script.js"></script>

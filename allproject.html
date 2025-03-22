@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - CYNOR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeIn: "fadeIn 1.5s ease-in-out",
+                        slideUp: "slideUp 1s ease-in-out",
+                        zoomIn: "zoomIn 1s ease-in-out",
+                        glow: "glow 1.5s infinite alternate"
+                    },
+                    keyframes: {
+                        fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } },
+                        slideUp: { "0%": { transform: "translateY(50px)", opacity: 0 }, "100%": { transform: "translateY(0)", opacity: 1 } },
+                        zoomIn: { "0%": { transform: "scale(0.8)", opacity: 0 }, "100%": { transform: "scale(1)", opacity: 1 } },
+                        glow: { "0%": { boxShadow: "0 0 10px rgba(0, 255, 255, 0.5)" }, "100%": { boxShadow: "0 0 20px rgba(0, 255, 255, 1)" } }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div class="max-w-5xl mx-auto p-8 mt-10 glass-effect animate-fadeIn">
+
+        <!-- Title Section -->
+        <h1 class="text-4xl font-bold text-cyan-400 animate-glow">Coming Soon...</h1>
+        
+
+    </div>
+
+</body>
+</html>
