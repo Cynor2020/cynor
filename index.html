@@ -8,6 +8,12 @@
     <title>CYNOR - AI & Web Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+     function openTeamPage() {
+       window.location.href = "allteam.html"; // Same directory me hai toh ye chalega
+     }
+    </script>
+
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -436,6 +442,8 @@ body::before {
             
             <a href="#contact">Contact</a>
             <a href="./about.html">About US</a>
+            <a href="#" onclick="openTeamPage()">Team</a>
+
         </div>
     </nav>
 
