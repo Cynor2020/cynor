@@ -11,6 +11,9 @@
      function openTeamPage() {
        window.location.href = "allteam.html"; // Same directory me hai toh ye chalega
      }
+        function openAboutPage() {
+       window.location.href = "about.html"; // Same directory me hai toh ye chalega
+     }
     </script>
 
     <script>
@@ -436,13 +439,12 @@ body::before {
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             
-            <a href="./allteam.html">Team</a>
-            <a href="./allteam.html">Team</a>
+            <a href="#" onclick="openTeamPage()">Team</a>
 
             
             <a href="#contact">Contact</a>
-            <a href="./about.html">About US</a>
-            <a href="#" onclick="openTeamPage()">Team</a>
+            <a href="#" onclick="openAboutPage()">About</a>
+            
 
         </div>
     </nav>
