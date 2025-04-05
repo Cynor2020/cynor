@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://github.com/Cynor2020/SoftForPC-Content-Hub/blob/main/About/softforpc.gif" 
+  <img src="https://github.com/Cynor2020/cynor/blob/main/img/cynor.png?raw=true" 
        alt="CYNOR Banner" 
        style="width:100%; max-height:400px; object-fit:cover;"/>
 </p>
