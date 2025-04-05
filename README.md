@@ -5,7 +5,7 @@
 <p align="center">
   <img src="https://github.com/Cynor2020/cynor/blob/main/img/cynor.png?raw=true" 
        alt="CYNOR Banner" 
-       style="width:100%; max-height:400px; object-fit:cover;"/>
+       style="width:100px; max-height:100px; object-fit:cover;"/>
 </p>
 
 <p align="center">
